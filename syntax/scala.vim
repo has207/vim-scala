@@ -59,10 +59,8 @@ syn match scalaTodo "[tT][oO][dD][oO]" contained
 syn match scalaLineComment "//.*" contains=scalaTodo
 syn region scalaComment start="/\*" end="\*/" contains=scalaTodo
 syn case ignore
-syn include @scalaHtml syntax/html.vim
-unlet b:current_syntax
 syn case match
-syn region scalaDocComment start="/\*\*" end="\*/" contains=scalaDocTags,scalaTodo,@scalaHtml keepend
+syn region scalaDocComment start="/\*\*" end="\*/" contains=scalaDocTags,scalaTodo keepend
 syn region scalaDocTags start="{@\(link\|linkplain\|inherit[Dd]oc\|doc[rR]oot\|value\)" end="}" contained
 syn match scalaDocTags "@[a-z]\+" contained
 
